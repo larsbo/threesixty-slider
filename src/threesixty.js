@@ -43,6 +43,7 @@
    *        progress: '.spinner',
    *        imagePath:'/assets/product1/',
    *        filePrefix: 'ipod-',
+   *        numerationStart: 1,
    *        ext: '.jpg',
    *        height: 265,
    *        width: 400,
@@ -90,6 +91,7 @@
      *        progress: '.spinner',
      *        imagePath:'/assets/product1/',
      *        filePrefix: 'ipod-',
+     *        numerationStart: 1,
      *        ext: '.jpg',
      *        height: 265,
      *        width: 400,
@@ -113,7 +115,7 @@
      * @method initProgress
      * @private
      * This function setup the progress indicator styles.
-     * If you want to overreide the default styles of the progress indicator
+     * If you want to override the default styles of the progress indicator
      * you need to pass the css styles in the styles property in plugin options.
      *
      */
@@ -140,7 +142,7 @@
     base.loadImages = function() {
       var li, imageName, image, host;
       li = document.createElement('li');
-      imageName = AppCongif.domain + AppCongif.imagePath + AppCongif.filePrefix + (AppCongif.loadedImages + 1) + AppCongif.ext + (($.browser.msie) ? '?' + new Date().getTime() : '');
+      imageName = AppCongif.domain + AppCongif.imagePath + AppCongif.filePrefix + (AppCongif.loadedImages + AppCongif.numerationStart) + AppCongif.ext + (($.browser.msie) ? '?' + new Date().getTime() : '');
       image = $('<img>').attr('src', imageName).addClass('previous-image').appendTo(li);
 
       frames.push(image);
