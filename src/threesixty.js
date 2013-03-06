@@ -572,6 +572,11 @@
      */
     filePrefix: '',
     /**
+     * @cfg {Number} numerationStart
+     * Starting number for image numeration. Change this if your images don't start with 1.
+     */
+    numerationStart: 1,
+    /**
      * @cfg {String} ext [ext=.png]
      * Slider image extension.
      */
